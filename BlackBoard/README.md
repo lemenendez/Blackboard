@@ -28,3 +28,13 @@ It is the wrapper for the inputs and outputs in the Blackboard.
 KnowledgeWorker.cs
 --------------
 
+Samples
+==============
+
+Primes
+--------------
+
+The PrimeFinder is a KnowledgeWorker and implements its methods
+
+
+

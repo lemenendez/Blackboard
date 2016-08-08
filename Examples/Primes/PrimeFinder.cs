@@ -18,9 +18,10 @@ namespace Primes
 
         }
 
-        public override void executeCondition()
+        public override bool executeCondition()
         {
             this.keys = new List<KeyValuePair<string, ControlData>>();
+            this.canContribute = false;
             foreach (KeyValuePair<string, ControlData> cdata in this.blackboard.inspect())
             {
                 if (cdata.Value.problem == "PrimeNumbers" 
@@ -30,12 +31,12 @@ namespace Primes
                         && (int)cdata.Value.input[0]<this.MAX)
                 {
                     
-                    this.canContribute = true;
-                    // this.keys.Add(new KeyValuePair<string, ControlData>(cdata.Key, cdata.Value.Clone()));
+                    this.canContribute = true;                   
                     this.keys.Add(cdata);
-                    System.Console.WriteLine(string.Format("Worker:{0} can contribute on Problem:{1}", this.Name, cdata.Key));                    
+                    System.Console.WriteLine(string.Format("Worker:{0} can contribute on Problem:{1}", this.Name, cdata.Key));
                 }
             }
+            return this.canContribute;
         }
 
         protected bool valueIsOk( object obj)

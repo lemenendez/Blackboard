@@ -30,20 +30,16 @@ namespace Blackboard
         {
             // observers the blackboard
             foreach (KeyValuePair<string, ControlData> value in this.blackBoard.inspect())
-            {
-                if (value.Value.problem == "PrimeNumbers")
-                {
-                    foreach (KnowledgeWorker worker in this.blackBoard.knowledgeWorkers)
-                    {
-                        if (worker.getName() == "PrimeFinder")
-                        {
-                            Console.WriteLine("Knowledge Worker Found");
-                            worker.executeCondition();
-                            worker.executeAction();
-                            worker.updateBlackboard();
-                        }
-                    }
-                }                
+            {                  
+                 foreach (KnowledgeWorker worker in this.blackBoard.knowledgeWorkers)
+                 {
+                     if (worker.executeCondition())
+                     {
+                         Console.WriteLine(string.Format("{0} Can Contribute",worker.getName()));                         
+                         worker.executeAction();
+                         worker.updateBlackboard();
+                     }
+                 }                        
             }
         }
     }

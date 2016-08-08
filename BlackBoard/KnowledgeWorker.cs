@@ -30,7 +30,7 @@ namespace Blackboard
 
         abstract public void executeAction();
 
-        abstract public void executeCondition();
+        abstract public bool executeCondition();
 
         abstract public void updateBlackboard();
 
