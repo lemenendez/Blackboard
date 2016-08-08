@@ -16,7 +16,7 @@ Blackboard.cs
 It contains information about the BlackBoard (data) and provides methods to interact with the data.
 Also contains informatio about the KnowledgeWorkers.
 
-Control.cs
+Control.cs 
 --------------
 Its primary objective is decised who will be the next KnowledgeWorker to be called.
 
